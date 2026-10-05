@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#d6ebc4">
+<title>Thanks, Areeba</title>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#d6ebc4; --ink:#2a2a2a; --paper:#fffdf7; --pink:#ffb6c6; --leaf:#6aa84f; --leaf2:#8cc46e; --dot:#c3dfae;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#26332a;--ink:#f2efe6;--paper:#34443a;--dot:#2f3f34}}
+:root[data-theme="dark"]{--bg:#26332a;--ink:#f2efe6;--paper:#34443a;--dot:#2f3f34}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;min-height:100dvh;background:var(--bg);color:var(--ink);background-image:radial-gradient(var(--dot) 2.5px,transparent 3px);background-size:26px 26px;font-family:"Gaegu","Comic Sans MS",cursive;font-size:21px;line-height:1.3;display:flex;flex-direction:column;align-items:center;padding:22px 16px 40px;overflow-x:hidden;-webkit-user-select:none;user-select:none}
+h1{font-family:"Fredoka","Trebuchet MS",sans-serif;font-weight:500;font-size:clamp(38px,11vw,68px);line-height:1;margin:0;text-align:center}
+.sub{margin:6px 0 0;font-size:23px;text-align:center}
+.scene{display:flex;align-items:flex-end;justify-content:center;gap:12px;margin-top:62px;width:100%;max-width:440px}
+.stage{position:relative;flex:1 1 auto;max-width:290px;cursor:pointer;touch-action:manipulation}
+.stage:focus-visible{outline:3px dashed var(--ink);outline-offset:6px;border-radius:20px}
+.panda{width:100%;display:block;transform-origin:50% 65%}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+#heartEyes,#starEyes,#sleepEyes,#winkEye,#munch{display:none}
+.panda[data-face=heart] .eye,.panda[data-face=star] .eye,.panda[data-face=sleep] .eye{display:none}
+.panda[data-face=heart] #heartEyes,.panda[data-face=star] #starEyes,.panda[data-face=sleep] #sleepEyes,.panda[data-face=wink] #winkEye,.panda[data-face=munch] #munch{display:block}
+.panda[data-face=wink] #eyeR{display:none}
+.panda[data-face=munch] #mouth{display:none}
+#munch{transform-box:fill-box;transform-origin:center;animation:chew .3s infinite}
+@keyframes chew{50%{transform:translateY(3px) scaleX(.92)}}
+.cheek{transform-box:fill-box;transform-origin:center;transition:transform .2s}
+.panda.blush .cheek{transform:scale(1.5)}
+.acc{display:none;transform-box:fill-box;transform-origin:center bottom}
+.acc.on{display:block;animation:pop .4s cubic-bezier(.3,1.7,.5,1)}
+@keyframes pop{from{transform:scale(0) translateY(20px)}to{transform:none}}
+.a-spin{animation:spin .8s ease}
+@keyframes spin{to{transform:rotate(360deg)}}
+.a-hop{animation:hop .5s cubic-bezier(.3,1.5,.5,1)}
+@keyframes hop{40%{transform:translateY(-22px) rotate(-3deg)}}
+.a-dance{animation:dance .45s 3}
+@keyframes dance{0%,100%{transform:none}25%{transform:translateX(-12px) rotate(-6deg)}75%{transform:translateX(12px) rotate(6deg)}}
+.a-squish{animation:squish .5s}
+@keyframes squish{50%{transform:scale(1.1,.86)}}
+.say{position:absolute;left:50%;top:-54px;transform:translateX(-50%);white-space:nowrap;background:var(--paper);border:2px solid var(--ink);border-radius:16px;padding:3px 16px;font-size:22px;pointer-events:none}
+.say::after{content:"";position:absolute;left:50%;bottom:-9px;width:14px;height:14px;background:var(--paper);border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateX(-50%) rotate(45deg)}
+.say.bump{animation:bump .3s}
+@keyframes bump{50%{transform:translateX(-50%) scale(1.1)}}
+.bamboo{display:flex;flex-direction:column-reverse;align-items:center;width:44px;height:320px;flex:none;position:relative}
+.seg{width:28px;height:23px;margin-top:-2px;background:var(--leaf);border:2.5px solid var(--ink);border-radius:8px;transform-origin:bottom;animation:grow .35s cubic-bezier(.3,1.6,.5,1);position:relative}
+.seg:nth-child(odd){background:var(--leaf2)}
+.seg.leafy::after{content:"";position:absolute;top:5px;left:21px;width:24px;height:11px;background:var(--leaf2);border:2.5px solid var(--ink);border-radius:0 14px 0 14px;transform:rotate(-18deg)}
+.seg.leafy:nth-child(4n)::after{left:-26px;border-radius:14px 0 14px 0;transform:rotate(18deg)}
+@keyframes grow{from{transform:scaleY(0)}to{transform:none}}
+.ground{position:absolute;bottom:-8px;width:58px;height:10px;background:var(--ink);border-radius:8px;opacity:.8}
+.panel{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
+.like{font-family:"Fredoka","Trebuchet MS",sans-serif;font-weight:400;font-size:19px;line-height:1.2;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:14px 26px;min-height:52px;max-width:340px;box-shadow:0 3px 0 var(--ink);cursor:pointer;touch-action:manipulation;transition:transform .08s,box-shadow .08s,background .2s}
+.like:active{transform:translateY(3px);box-shadow:0 0 0 var(--ink);background:var(--pink);color:#2a2a2a}
+.like:focus-visible{outline:3px dashed var(--ink);outline-offset:5px}
+.count{font-size:23px;display:flex;align-items:center;gap:8px}
+.count b{font-family:"Fredoka",sans-serif;font-weight:500;font-size:26px;min-width:1.2em;text-align:center}
+.count svg{width:22px;height:22px}
+.tip{font-size:19px;opacity:.75;text-align:center}
+.fx{position:fixed;pointer-events:none;width:26px;height:26px;z-index:9;animation:up 1.4s ease-out forwards}
+@keyframes up{0%{opacity:1;transform:translateY(0) scale(.5)}100%{opacity:0;transform:translate(var(--x),-170px) scale(1.1) rotate(var(--r))}}
+@media (prefers-reduced-motion:reduce){.eye,.seg,.acc.on,.say.bump,#munch,[class*=a-]{animation:none!important}.fx{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>Thanks, Areeba</h1>
+<p class="sub">for all the likes</p>
+
+<div class="scene">
+  <div class="stage" id="stage" tabindex="0" role="button" aria-label="Tap the panda">
+    <div class="say" id="say" role="status">hi Areeba!</div>
+    <svg class="panda" id="panda" viewBox="0 0 300 340" aria-hidden="true">
+      <ellipse cx="150" cy="288" rx="92" ry="54" fill="#fffdf7" stroke="#2a2a2a" stroke-width="6"/>
+      <ellipse cx="78" cy="276" rx="22" ry="40" fill="#2a2a2a" transform="rotate(24 78 276)"/>
+      <ellipse cx="222" cy="276" rx="22" ry="40" fill="#2a2a2a" transform="rotate(-24 222 276)"/>
+      <circle cx="68" cy="82" r="38" fill="#2a2a2a"/><circle cx="232" cy="82" r="38" fill="#2a2a2a"/>
+      <circle cx="68" cy="82" r="16" fill="#ffb6c6"/><circle cx="232" cy="82" r="16" fill="#ffb6c6"/>
+      <ellipse cx="150" cy="168" rx="126" ry="112" fill="#fffdf7" stroke="#2a2a2a" stroke-width="6"/>
+      <ellipse cx="98" cy="154" rx="30" ry="38" fill="#2a2a2a" transform="rotate(22 98 154)"/>
+      <ellipse cx="202" cy="154" rx="30" ry="38" fill="#2a2a2a" transform="rotate(-22 202 154)"/>
+      <g class="eye" id="eyeL"><circle cx="100" cy="152" r="12" fill="#fff"/><circle class="pupil" cx="100" cy="152" r="5.5" fill="#2a2a2a"/></g>
+      <g class="eye" id="eyeR"><circle cx="200" cy="152" r="12" fill="#fff"/><circle class="pupil" cx="200" cy="152" r="5.5" fill="#2a2a2a"/></g>
+      <g id="heartEyes" fill="#ff5a7a"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" transform="translate(82 134) scale(1.5)"/><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" transform="translate(182 134) scale(1.5)"/></g>
+      <g id="starEyes" fill="#ffe48a"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z" transform="translate(81 133) scale(1.55)"/><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z" transform="translate(181 133) scale(1.55)"/></g>
+      <g id="sleepEyes" fill="none" stroke="#fffdf7" stroke-width="6" stroke-linecap="round"><path d="M86 150 Q100 164 114 150"/><path d="M186 150 Q200 164 214 150"/></g>
+      <g id="winkEye" fill="none" stroke="#fffdf7" stroke-width="6" stroke-linecap="round"><path d="M186 158 Q200 140 214 158"/></g>
+      <ellipse cx="150" cy="188" rx="15" ry="10" fill="#2a2a2a"/>
+      <path id="mouth" d="M150 198 Q150 218 132 218 M150 198 Q150 218 168 218" fill="none" stroke="#2a2a2a" stroke-width="5" stroke-linecap="round"/>
+      <g id="munch"><rect x="112" y="204" width="76" height="18" rx="9" fill="#8cc46e" stroke="#2a2a2a" stroke-width="4"/><path d="M138 204 V222 M162 204 V222" stroke="#2a2a2a" stroke-width="3"/></g>
+      <ellipse class="cheek" cx="66" cy="200" rx="17" ry="10" fill="#ffb6c6"/><ellipse class="cheek" cx="234" cy="200" rx="17" ry="10" fill="#ffb6c6"/>
+      <g class="acc" id="hat"><path d="M120 66 L150 6 L180 66 Z" fill="#ff7a96" stroke="#2a2a2a" stroke-width="5" stroke-linejoin="round"/><circle cx="150" cy="6" r="9" fill="#ffe48a" stroke="#2a2a2a" stroke-width="4"/><path d="M135 40 L165 40" stroke="#fffdf7" stroke-width="5" stroke-linecap="round"/></g>
+      <g class="acc" id="shades"><rect x="62" y="136" width="62" height="38" rx="14" fill="#2a2a2a" stroke="#fffdf7" stroke-width="3"/><rect x="176" y="136" width="62" height="38" rx="14" fill="#2a2a2a" stroke="#fffdf7" stroke-width="3"/><path d="M124 150 H176" stroke="#2a2a2a" stroke-width="6"/><path d="M74 146 L88 146 M188 146 L202 146" stroke="#fffdf7" stroke-width="4" stroke-linecap="round"/></g>
+      <g class="acc" id="crown"><path d="M106 70 L100 24 L126 46 L150 14 L174 46 L200 24 L194 70 Z" fill="#ffd23f" stroke="#2a2a2a" stroke-width="5" stroke-linejoin="round"/><circle cx="150" cy="14" r="6" fill="#ff7a96" stroke="#2a2a2a" stroke-width="3"/></g>
+      <g class="acc" id="bow" transform="translate(232 50)"><path d="M0 0 L-28 -16 L-28 16Z M0 0 L28 -16 L28 16Z" fill="#ff7a96" stroke="#2a2a2a" stroke-width="4" stroke-linejoin="round"/><circle r="8" fill="#ffb6c6" stroke="#2a2a2a" stroke-width="4"/></g>
+    </svg>
+  </div>
+  <div class="bamboo" id="bamboo" aria-hidden="true"><div class="ground"></div></div>
+</div>
+
+<div class="panel">
+  <button class="like" id="like" type="button">tap to make the panda cooler and cuter</button>
+  <div class="count"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#ffb6c6" stroke="#2a2a2a" stroke-width="1.6" stroke-linejoin="round"/></svg>likes sent <b id="n">0</b></div>
+  <div class="tip">every tap is a new surprise</div>
+</div>
+
+<script>
+(function(){
+  var n=0, say=document.getElementById('say'), panda=document.getElementById('panda'), stage=document.getElementById('stage'),
+      bamboo=document.getElementById('bamboo'), num=document.getElementById('n'), btn=document.getElementById('like'),
+      pupils=[].slice.call(document.querySelectorAll('.pupil')), outfits=['hat','shades','crown','bow'];
+  var R=[
+    {t:'wheee ^o^',a:'spin',fx:['star','sparkle','star']},
+    {t:'uwu',f:'heart',fx:['heart','heart','heart']},
+    {t:'party time!',o:'hat',a:'hop',fx:['sparkle','star','star']},
+    {t:'hehe ;)',f:'wink',fx:['sparkle','sparkle','star']},
+    {t:'too cool B)',o:'shades',a:'hop',fx:['star','sparkle','star']},
+    {t:'zzz... (-_-)',f:'sleep',ms:1900,fx:['z','z','z']},
+    {t:'wow *_*',f:'star',a:'hop',fx:['star','sparkle','star']},
+    {t:'so cute <3',o:'bow',a:'squish',fx:['heart','sparkle','heart']},
+    {t:'la la la',a:'dance',fx:['note','note','note']},
+    {t:'nom nom nom',f:'munch',ms:2000,fx:['leaf','leaf','leaf']},
+    {t:'queen mode',o:'crown',a:'hop',fx:['sparkle','star','sparkle','star']},
+    {t:'>///<',a:'squish',b:1,fx:['heart','heart','sparkle']}
+  ];
+  var S={
+    heart:['M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z','#ffb6c6'],
+    star:['M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z','#ffe48a'],
+    sparkle:['M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z','#fffdf7'],
+    leaf:['M4 20C4 9 11 4 20 4c0 9-5 16-16 16z','#8cc46e'],
+    note:['M9 3v11.3a3 3 0 1 0 2 2.7V7l8-1.5v6.8a3 3 0 1 0 2 2.7V2z','#c9b6ff'],
+    z:['M6 6h12L6 18h12','none']
+  }, NS='http://www.w3.org/2000/svg';
+  function piece(type){
+    var s=S[type], r=panda.getBoundingClientRect(), el=document.createElementNS(NS,'svg'), p=document.createElementNS(NS,'path');
+    el.setAttribute('viewBox','0 0 24 24');el.setAttribute('class','fx');
+    el.style.left=(r.left+r.width*(.15+Math.random()*.7))+'px';el.style.top=(r.top+r.height*(.15+Math.random()*.25))+'px';
+    el.style.setProperty('--r',(Math.random()*80-40)+'deg');el.style.setProperty('--x',(Math.random()*120-60)+'px');
+    p.setAttribute('d',s[0]);p.setAttribute('fill',s[1]);p.setAttribute('stroke','#2a2a2a');
+    p.setAttribute('stroke-width',s[1]==='none'?'3':'1.6');p.setAttribute('stroke-linejoin','round');p.setAttribute('stroke-linecap','round');
+    el.appendChild(p);document.body.appendChild(el);setTimeout(function(){el.remove()},1500);
+  }
+  function look(x,y){
+    var r=panda.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height*.5;
+    var dx=x-cx, dy=y-cy, d=Math.hypot(dx,dy)||1, k=Math.min(6,d/20);
+    pupils.forEach(function(p){p.style.transform='translate('+(dx/d*k)+'px,'+(dy/d*k)+'px)'});
+  }
+  document.addEventListener('pointermove',function(e){look(e.clientX,e.clientY)});
+  document.addEventListener('pointerdown',function(e){look(e.clientX,e.clientY)});
+  var resetT=null;
+  function react(){
+    var c=R[n%R.length]; n++; num.textContent=n;
+    try{navigator.vibrate&&navigator.vibrate(20)}catch(e){}
+    clearTimeout(resetT);
+    panda.removeAttribute('data-face');panda.classList.remove('blush','a-spin','a-hop','a-dance','a-squish');void panda.offsetWidth;
+    if(c.f)panda.setAttribute('data-face',c.f);
+    if(c.b)panda.classList.add('blush');
+    if(c.a)panda.classList.add('a-'+c.a);
+    if(c.o){outfits.forEach(function(o){document.getElementById(o).classList.remove('on')});document.getElementById(c.o).classList.add('on')}
+    say.textContent=c.t;say.classList.remove('bump');void say.offsetWidth;say.classList.add('bump');
+    c.fx.forEach(function(t,i){setTimeout(function(){piece(t)},i*90)});
+    if(bamboo.querySelectorAll('.seg').length<12){var s=document.createElement('div');s.className='seg'+(n%2?' leafy':'');bamboo.appendChild(s)}
+    resetT=setTimeout(function(){panda.removeAttribute('data-face');panda.classList.remove('blush','a-spin','a-hop','a-dance','a-squish')},c.ms||1500);
+  }
+  btn.addEventListener('click',react);
+  stage.addEventListener('click',react);
+  stage.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();react()}});
+})();
+</script>
+</body>
+</html>
