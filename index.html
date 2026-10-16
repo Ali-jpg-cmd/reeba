@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thank you, Areeba 💐</title>
+<meta name="theme-color" content="#0C0A0E">
+<meta name="color-scheme" content="dark">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0A0E; --bg2:#22101C; --ink:#FFEFF5; --soft:#F0A9C6; --card:#1B1219; --shadow:rgba(0,0,0,.55);
+  --pink:#FF4F9A; --mint:#FF9CC6; --butter:#FFD6E7; --peach:#FF7AAE; --lav:#F2B8FF;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root{color-scheme:dark}
+}
+:root[data-theme="dark"]{color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:#0C0A0E;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Fredoka','Trebuchet MS',system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 15%,var(--bg2) 0 100px,transparent 101px),radial-gradient(circle at 92% 45%,var(--bg2) 0 140px,transparent 141px),radial-gradient(circle at 15% 88%,var(--bg2) 0 110px,transparent 111px)}
+main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 20px 70px}
+section{padding:44px 0 6px}
+h1{font-size:clamp(2.5rem,11vw,4.3rem);line-height:1.05;margin:0;font-weight:500;text-align:center}
+h1 span{display:block;color:var(--pink);text-shadow:0 0 26px rgba(255,79,154,.5);animation:bounce 2.6s ease-in-out infinite}
+@keyframes bounce{50%{transform:translateY(-6px) rotate(-1.5deg)}}
+h2{font-size:1.5rem;font-weight:500;margin:0 0 6px;text-align:center}
+.sub{text-align:center;color:var(--soft);margin:0 0 24px}
+.hero{text-align:center;padding-top:40px}
+.hint{font-family:'Caveat',cursive;font-size:1.6rem;color:var(--soft);margin:8px 0 0}
+button{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent;cursor:pointer;touch-action:manipulation}
+button:focus-visible{outline:3px solid var(--pink);outline-offset:4px;border-radius:14px}
+
+.heart{display:block;margin:22px auto 0;width:min(190px,52vw);background:none;border:0;padding:0;animation:beat 1.6s ease-in-out infinite}
+.heart svg{width:100%;height:auto;display:block;overflow:visible}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.08)}30%{transform:scale(1)}45%{transform:scale(1.05)}}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}
+@keyframes blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+
+.env{position:relative;display:block;width:min(280px,76vw);height:180px;margin:0 auto;background:#FF8FB8;border:0;border-radius:10px;box-shadow:0 6px 18px rgba(255,79,154,.25);padding:0}
+.env::before,.env::after{content:"";position:absolute;bottom:0;width:100%;height:100%;border-radius:10px}
+.env::before{background:#FFA6CB;clip-path:polygon(0 0,52% 58%,0 100%)}
+.env::after{background:#FF9AC3;clip-path:polygon(100% 0,48% 58%,100% 100%)}
+.flap{position:absolute;top:0;left:0;width:100%;height:112px;background:#FF6FA8;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .5s;z-index:2;border-radius:10px 10px 0 0}
+.seal{position:absolute;left:50%;top:96px;transform:translate(-50%,-50%);font-size:1.7rem;z-index:3;transition:opacity .2s}
+.env.open .flap{transform:rotateX(180deg);z-index:0}
+.env.open .seal{opacity:0}
+.card{max-width:460px;margin:18px auto 0;background:var(--card);border-radius:22px;padding:0 24px;box-shadow:0 8px 20px var(--shadow);font-family:'Caveat',cursive;font-size:1.6rem;line-height:1.28;max-height:0;opacity:0;overflow:hidden;transition:max-height .7s,opacity .5s,padding .5s}
+.card.show{max-height:700px;opacity:1;padding:26px 24px}
+.card p{margin:0 0 10px}.card .sign{text-align:right;margin:14px 0 0}
+
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:6px 4px}
+.note{font-family:'Caveat',cursive;font-size:1.5rem;line-height:1.15;padding:26px 20px 20px;border-radius:6px;color:#2A0F1D;box-shadow:0 5px 12px var(--shadow);position:relative;transition:transform .25s}
+.note::before{content:"";position:absolute;top:-10px;left:50%;width:54px;height:20px;margin-left:-27px;background:rgba(255,255,255,.65);border-radius:3px;transform:rotate(-3deg)}
+.note::after{content:"♡";position:absolute;right:14px;bottom:8px;font-family:'Fredoka',sans-serif;opacity:.4}
+.note:nth-child(1){background:var(--butter);transform:rotate(-2.5deg)}
+.note:nth-child(2){background:var(--mint);transform:rotate(2deg)}
+.note:nth-child(3){background:var(--lav);transform:rotate(-1.5deg)}
+.note:nth-child(4){background:var(--peach);transform:rotate(2.5deg)}
+.note:hover{transform:rotate(0) scale(1.04)}
+
+.garden{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.bud{width:110px;background:var(--card);border:1.5px dashed rgba(255,79,154,.45);border-radius:22px;padding:14px 6px 12px;box-shadow:0 4px 12px var(--shadow);text-align:center}
+.bud .f{display:block;font-size:2.6rem;line-height:1.1;transition:transform .5s cubic-bezier(.3,1.8,.5,1)}
+.bud .w{display:block;font-family:'Caveat',cursive;font-size:1.35rem;color:var(--soft);margin-top:4px}
+.bud.bloom .f{transform:scale(1.35)}
+.bud.bloom .w{color:var(--ink)}
+
+footer{text-align:center;color:var(--soft);padding:46px 0 0;font-size:.95rem}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.float{position:fixed;bottom:-40px;font-size:1.6rem;pointer-events:none;z-index:2;animation:up linear forwards}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<main>
+
+<section class="hero">
+  <h1>Thank you<span>Areeba!</span></h1>
+  <p class="hint">tap the heart</p>
+  <button class="heart" id="heart" aria-label="Tap the heart">
+    <svg viewBox="0 0 120 110" aria-hidden="true">
+      <path d="M60 104 C10 68 4 34 26 18 C42 7 56 16 60 28 C64 16 78 7 94 18 C116 34 110 68 60 104Z" fill="#FF4F9A"/>
+      <path d="M30 28 q8 -9 18 -6" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round"/>
+      <g class="eye"><ellipse cx="45" cy="52" rx="5" ry="6.5" fill="#3A2F4A"/><circle cx="47" cy="50" r="2" fill="#fff"/></g>
+      <g class="eye"><ellipse cx="75" cy="52" rx="5" ry="6.5" fill="#3A2F4A"/><circle cx="77" cy="50" r="2" fill="#fff"/></g>
+      <ellipse cx="34" cy="62" rx="8" ry="5" fill="#fff" opacity=".45"/><ellipse cx="86" cy="62" rx="8" ry="5" fill="#fff" opacity=".45"/>
+      <path d="M52 62 q8 9 16 0" fill="none" stroke="#3A2F4A" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </button>
+</section>
+
+<section>
+  <h2>A little letter for you 💌</h2>
+  <p class="sub">tap the envelope to open it</p>
+  <button class="env" id="env" aria-label="Open the letter" aria-expanded="false"><span class="flap"></span><span class="seal">💗</span></button>
+  <div class="card" id="card">
+    <p>Dear Areeba,</p>
+    <p>I don't think I've said it properly yet, so here it is: thank you. You helped me so much, and you didn't have to. You made hard things feel easier, and I won't forget it.</p>
+    <p>I'm really lucky to have a friend like you. I hope life gives back to you everything you gave to me.</p>
+    <p class="sign">Your friend,<br>Ali 🌷</p>
+  </div>
+</section>
+
+<section>
+  <h2>Thank you for... 🌟</h2>
+  <p class="sub">just a few of the things</p>
+  <div class="notes">
+    <div class="note">Helping me when I really needed it.</div>
+    <div class="note">Being patient with all my questions.</div>
+    <div class="note">Believing I could do it.</div>
+    <div class="note">Making hard things feel easy.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Why you're special 🌷</h2>
+  <p class="sub">tap each bud to make it bloom</p>
+  <div class="garden" id="garden"></div>
+</section>
+
+<footer>made with lots of thanks 🌸</footer>
+</main>
+
+<script>
+(function(){
+  var cv=document.getElementById('c'),cx=cv.getContext('2d'),parts=[],run=false;
+  function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+  var cols=['#FF4F9A','#FF9CC6','#FFD6E7','#F2B8FF','#FF7AAE','#ffffff'];
+  function burst(x,y,n){
+    for(var i=0;i<n;i++){var a=Math.random()*6.28,s=3+Math.random()*7;
+      parts.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,r:3+Math.random()*4,c:cols[i%6],rot:Math.random()*6,life:100+Math.random()*50})}
+    if(!run){run=true;requestAnimationFrame(tick)}
+  }
+  function tick(){
+    cx.clearRect(0,0,cv.width,cv.height);parts=parts.filter(function(p){return p.life>0});
+    parts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.22;p.vx*=.99;p.rot+=.15;p.life--;
+      cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=p.c;cx.globalAlpha=Math.min(1,p.life/40);cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()});
+    if(parts.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}
+  }
+  function hearts(n){
+    var e=['💗','🌸','✨','🌷','💖','🌼'];
+    for(var i=0;i<n;i++){var s=document.createElement('span');s.className='float';s.textContent=e[i%6];
+      s.style.left=Math.random()*95+'%';s.style.animationDuration=(4+Math.random()*4)+'s';s.style.animationDelay=(Math.random()*1.2)+'s';
+      document.body.appendChild(s);setTimeout(function(el){el.remove()}.bind(null,s),10000)}
+  }
+  document.getElementById('heart').addEventListener('click',function(){
+    var r=this.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,70);hearts(10);
+  });
+  var env=document.getElementById('env'),card=document.getElementById('card');
+  env.addEventListener('click',function(){
+    var o=env.classList.toggle('open');card.classList.toggle('show',o);env.setAttribute('aria-expanded',o);
+    if(o){var r=env.getBoundingClientRect();burst(r.left+r.width/2,r.top+40,40)}
+  });
+  var B=[['🌷','kind'],['🌸','patient'],['🌼','supportive'],['🌻','smart'],['🌺','one of a kind']],g=document.getElementById('garden');
+  B.forEach(function(b){
+    var d=document.createElement('button');d.className='bud';d.setAttribute('aria-label','Bloom');
+    d.innerHTML='<span class="f">🌱</span><span class="w">tap me</span>';
+    d.addEventListener('click',function(){
+      if(d.classList.contains('bloom'))return;
+      d.classList.add('bloom');d.querySelector('.f').textContent=b[0];d.querySelector('.w').textContent=b[1];
+      var r=d.getBoundingClientRect();burst(r.left+r.width/2,r.top+30,28);
+    });
+    g.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>
